@@ -167,7 +167,7 @@ keys = [
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "space", lazy.next_layout()),
 
-# CHANGE FOCUS   
+# CHANGE FOCUS
     Key([mod], "Up", lazy.layout.up()),
     Key([mod], "Down", lazy.layout.down()),
     Key([mod], "Left", lazy.layout.left()),
@@ -312,7 +312,7 @@ def init_colors():
             ["#fba922", "#fba922"], # color 3
             ["#3384d0", "#3384d0"], # color 4
             ["#f3f4f5", "#f3f4f5"], # color 5
-            ["#fd0537", "#fd0537"], # color 6
+            ["#cd1f3f", "#cd1f3f"], # color 6
             ["#62FF00", "#62FF00"], # color 7
             ["#6790eb", "#6790eb"]] # color 8
 
@@ -342,10 +342,11 @@ def init_widgets_list():
                         padding_y = 6,
                         padding_x = 5,
                         borderwidth = 0,
-                        active = colors[8],
+                        active = colors[5],
                         inactive = colors[5],
                         rounded = False,
-                        highlight_method = "border",
+                        highlight_method = "text",
+                        this_current_screen_border = colors[8],
                         foreground = colors[2],
                         background = colors[1]
                         ),

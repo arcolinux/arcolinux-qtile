@@ -314,7 +314,8 @@ def init_colors():
             ["#f3f4f5", "#f3f4f5"], # color 5
             ["#cd1f3f", "#cd1f3f"], # color 6
             ["#62FF00", "#62FF00"], # color 7
-            ["#6790eb", "#6790eb"]] # color 8
+            ["#6790eb", "#6790eb"], # color 8
+            ["#a9a9a9", "#a9a9a9"]] # color 9
 
 
 colors = init_colors()
@@ -342,7 +343,7 @@ def init_widgets_list():
                         padding_y = 6,
                         padding_x = 5,
                         borderwidth = 0,
-                        active = colors[5],
+                        active = colors[9],
                         inactive = colors[5],
                         rounded = False,
                         highlight_method = "text",

@@ -391,14 +391,15 @@ def init_widgets_list():
                         core = "all",
                         type = "box"
                         ),
-               widget.ThermalSensor(
-                        foreground = colors[5],
-                        foreground_alert = colors[6],
-                        background = colors[1],
-                        metric = True,
-                        padding = 3,
-                        threshold = 80
-                        ),
+                        # do not activate in Virtualbox - will break qtile
+#              widget.ThermalSensor(
+#                        foreground = colors[5],
+#                        foreground_alert = colors[6],
+#                        background = colors[1],
+#                        metric = True,
+#                        padding = 3,
+#                        threshold = 80
+#                        ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
@@ -531,4 +532,4 @@ floating_layout = layout.Floating(float_rules=[
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
-wmname = "qtile"
+wmname = "LG3D"

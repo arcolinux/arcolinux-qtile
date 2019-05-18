@@ -422,6 +422,28 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                         ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.TextBox(
+               #          font="FontAwesome",
+               #          text="  ",
+               #          foreground=colors[9],
+               #          background=colors[1],
+               #          padding = 0,
+               #          fontsize=16
+               #          ),
+               # widget.Battery(
+               #          energy_now_file='charge_now',
+               #          energy_full_file='charge_full',
+               #          power_now_file='current_now',
+               #          foreground=colors[5],
+               #          background=colors[1],
+               #          update_interval = 5
+               #          ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,

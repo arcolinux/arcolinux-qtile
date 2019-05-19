@@ -428,7 +428,13 @@ def init_widgets_list():
                #          foreground = colors[2],
                #          background = colors[1]
                #          ),
+               # Choose : battery option 1
+               # widget.BatteryIcon(
+               #          theme_path=home + "/.config/qtile/battery_icons"
+               #          ),
+               # Choose : battery option 2               
                # widget.BatteryIcon(),
+               # Choose : battery option 3                           
                # widget.TextBox(
                #          font="FontAwesome",
                #          text="  ",

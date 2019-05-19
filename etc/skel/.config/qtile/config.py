@@ -428,6 +428,7 @@ def init_widgets_list():
                #          foreground = colors[2],
                #          background = colors[1]
                #          ),
+               # widget.BatteryIcon(),
                # widget.TextBox(
                #          font="FontAwesome",
                #          text="  ",

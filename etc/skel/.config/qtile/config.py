@@ -96,7 +96,7 @@ keys = [
 
     Key(["mod1", "control"], "a", lazy.spawn('xfce4-appfinder')),
     Key(["mod1", "control"], "b", lazy.spawn('thunar')),
-    Key(["mod1", "control"], "c", lazy.spawn('Catfish')),
+    Key(["mod1", "control"], "c", lazy.spawn('catfish')),
     Key(["mod1", "control"], "e", lazy.spawn('evolution')),
     Key(["mod1", "control"], "f", lazy.spawn('firefox')),
     Key(["mod1", "control"], "g", lazy.spawn('chromium -no-default-browser-check')),

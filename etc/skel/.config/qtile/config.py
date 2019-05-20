@@ -61,7 +61,6 @@ keys = [
 
     Key([mod], "e", lazy.spawn('atom')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-    Key([mod], "h", lazy.spawn('urxvt -e htop')),
     Key([mod], "m", lazy.spawn('pragha')),
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "r", lazy.spawn('rofi-theme-selector')),
@@ -116,6 +115,7 @@ keys = [
 # ALT + ... KEYS
 
     Key(["mod1"], "f", lazy.spawn('variety -f')),
+    Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
     Key(["mod1"], "n", lazy.spawn('variety -n')),
     Key(["mod1"], "p", lazy.spawn('variety -p')),
     Key(["mod1"], "t", lazy.spawn('variety -t')),
@@ -432,9 +432,9 @@ def init_widgets_list():
                # widget.BatteryIcon(
                #          theme_path=home + "/.config/qtile/battery_icons"
                #          ),
-               # Choose : battery option 2               
+               # Choose : battery option 2
                # widget.BatteryIcon(),
-               # Choose : battery option 3                           
+               # Choose : battery option 3
                # widget.TextBox(
                #          font="FontAwesome",
                #          text="  ",

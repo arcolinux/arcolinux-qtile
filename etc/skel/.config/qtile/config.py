@@ -344,6 +344,7 @@ def init_widgets_list():
                         padding_y = 6,
                         padding_x = 5,
                         borderwidth = 0,
+                        disable_drag = True,
                         active = colors[9],
                         inactive = colors[5],
                         rounded = False,

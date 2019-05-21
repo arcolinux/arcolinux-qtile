@@ -429,9 +429,9 @@ def init_widgets_list():
                #          foreground = colors[2],
                #          background = colors[1]
                #          ),
-               # Choose : battery option 1
+               # Choose : battery option 1 or vertical icons
                # widget.BatteryIcon(
-               #          theme_path=home + "/.config/qtile/battery_icons"
+               #          theme_path=home + "/.config/qtile/battery_icons_horiz"
                #          ),
                # Choose : battery option 2
                # widget.BatteryIcon(),

@@ -35,7 +35,7 @@ from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
 from libqtile.manager import Qtile
 import arcobattery
-# import arcomemory
+import arcomemory
 
 
 mod = "mod4"
@@ -416,15 +416,32 @@ def init_widgets_list():
                         background=colors[1],
                         padding = 0,
                         fontsize=16
+                        ),                                       
+               	arcomemory.Memory(
+                        fmt='{MemUsed} MB\n{Memsza}%',
+                        execute='urxvt -e htop',
+                        padding=5,
+                        margin=10,
+                        font="Noto Sans",
+                        fontsize = 10,
+                        update_interval=1,
+                        foreground = colors[5],
+                        background = colors[1]
                         ),
-               	# arcomemory.Memory(
-                #         fmt='{MemUsed} MB\n{Memsza}%',
-                #         execute=myTerm + ' -e htop',
-                #         padding=5,
-                #         update_interval=1,
-                #         foreground = colors[2],
-                #         background = colors[1]
-                #         ),               
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),               	
+               widget.TextBox(
+                        font="FontAwesome",
+                        text="  ",
+                        foreground=colors[4],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=16
+                        ),                                       
                widget.Memory(
                         font="Noto Sans",
                         fmt = '{MemUsed}/{MemTotal}M',

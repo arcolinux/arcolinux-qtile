@@ -368,10 +368,10 @@ class BatteryIcon(_Battery):
 
     def setup_images(self):
         d_imgs = images.Loader(self.theme_path)(*self.icon_names)
-        new_height = self.bar.height - self.actual_padding
+        new_height = self.bar.height
         surfs = self.surfaces
         for key, img in d_imgs.items():
             img.resize(height=new_height)
             if img.width > self.length:
-                self.length = int(img.width + self.actual_padding * 2)
+                self.length = img.width + self.actual_padding
             surfs[key] = img.pattern

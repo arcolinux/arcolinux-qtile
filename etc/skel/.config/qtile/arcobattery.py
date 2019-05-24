@@ -214,6 +214,7 @@ class BatteryIcon(_Battery):
         ('theme_path', default_icon_path(), 'Path of the icons'),
         ('custom_icons', {}, 'dict containing key->filename icon map'),
         ("scaleadd", 0, "Enable/Disable image scaling"),
+        ("y_poss", 0, "Modify y possition"),
     ]
 
     def __init__(self, **config):
@@ -340,7 +341,7 @@ class BatteryIcon(_Battery):
             scaler.scale(self.scale, self.scale)
             factor = (1 - 1 / self.scale) / 2
             scaler.translate(-width * factor, -width * factor)
-            scaler.translate(self.actual_padding * -1, 0)
+            scaler.translate(self.actual_padding * -1, self.y_poss)
             imgpat.set_matrix(scaler)
 
             imgpat.set_filter(cairocffi.FILTER_BEST)

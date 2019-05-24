@@ -476,7 +476,8 @@ def init_widgets_list():
                         background = colors[1]
                         ),
                arcobattery.BatteryIcon(
-                        padding=5,
+                        padding=0,
+                        scale=0.7,
                         theme_path=home + "/.config/qtile/battery_icons_horiz",
                         update_interval = 5,
                         background = colors[1]

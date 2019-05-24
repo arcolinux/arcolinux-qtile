@@ -1,47 +1,9 @@
-# Copyright (c) 2011 matt
-# Copyright (c) 2011 Paul Colomiets
-# Copyright (c) 2011-2014 Tycho Andersen
-# Copyright (c) 2012 dmpayton
-# Copyright (c) 2012 hbc
-# Copyright (c) 2012 Tim Neumann
-# Copyright (c) 2012 uberj
-# Copyright (c) 2012-2013 Craig Barnes
-# Copyright (c) 2013 Tao Sauvage
-# Copyright (c) 2014 Sean Vig
-# Copyright (c) 2014 dequis
-# Copyright (c) 2014 Sebastien Blot
-# Copyright (C) 2019, Krisztián Veress <krive001@gmail.com>
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 from __future__ import division
 
+import cairocffi
 import os
 from libqtile import bar
-from libqtile.log_utils import logger
 from libqtile.widget import base
-from libqtile import images
-
-try:
-    from typing import Dict  # noqa: F401
-except ImportError:
-    pass
 
 BAT_DIR = '/sys/class/power_supply'
 CHARGED = 'Full'
@@ -63,21 +25,13 @@ def default_icon_path():
     return os.path.join(root, 'resources', 'battery-icons')
 
 
-def _get_battery_name():
-    if os.path.isdir(BAT_DIR):
-        bats = [f for f in os.listdir(BAT_DIR) if f.startswith('BAT')]
-        if bats:
-            return bats[0]
-    return 'BAT0'
-
-
 class _Battery(base._TextBox):
     """Base battery class"""
 
-    filenames = {}  # type: Dict
+    filenames = {}
 
     defaults = [
-        ('battery_name', _get_battery_name(), 'ACPI name of a battery, usually BAT0'),
+        ('battery_name', 'BAT0', 'ACPI name of a battery, usually BAT0'),
         (
             'status_file',
             'status',
@@ -119,7 +73,7 @@ class _Battery(base._TextBox):
                 return 0
             return False
         except Exception:
-            logger.exception("Failed to get %s" % name)
+            self.log.exception("Failed to get %s" % name)
 
     def _get_param(self, name):
         if name in self.filenames and self.filenames[name]:
@@ -161,7 +115,9 @@ class _Battery(base._TextBox):
 
 
 class Battery(_Battery):
-    """A simple but flexible text-based battery widget"""
+    """
+        A simple but flexible text-based battery widget.
+    """
     orientations = base.ORIENTATION_HORIZONTAL
     defaults = [
         ('charge_char', '^', 'Character to indicate the battery is charging'),
@@ -218,15 +174,6 @@ class Battery(_Battery):
             elif info['stat'] == CHARGING:
                 char = self.charge_char
                 time = (info['full'] - info['now']) / info['power']
-            # if percent charge >0 and <50, but not discharging or charging, then return the current status
-            # TODO: make this configurable, don't just use 50% as arbitrary cut-off, maybe check if plugged in
-            elif info['now'] > 0 and \
-                    info['stat'] == UNKNOWN and \
-                    int(info['now'] / info['full']) != 1:
-                return '~' + str(int(info['now'] / info['full'] * 100)) + '%'
-            # battery is empty and not charging
-            elif info['now'] == 0 and info['stat'] == UNKNOWN:
-                return 'Empty'
             else:
                 return 'Full'
         except ZeroDivisionError:
@@ -240,7 +187,6 @@ class Battery(_Battery):
             hour = -1
             min = -1
         percent = info['now'] / info['full']
-        watt = info['power'] / 1e6
         if info['stat'] == DISCHARGING and percent < self.low_percentage:
             self.layout.colour = self.low_foreground
         else:
@@ -249,7 +195,6 @@ class Battery(_Battery):
         return self.format.format(
             char=char,
             percent=percent,
-            watt=watt,
             hour=hour,
             min=min
         )
@@ -267,43 +212,47 @@ class BatteryIcon(_Battery):
     orientations = base.ORIENTATION_HORIZONTAL
     defaults = [
         ('theme_path', default_icon_path(), 'Path of the icons'),
+        ('custom_icons', {}, 'dict containing key->filename icon map'),
+        ("scaleadd", 0, "Enable/Disable image scaling"),
     ]
-
-    icon_names = (
-        'battery-missing',
-        'battery-empty',
-        'battery-empty-charge',
-        'battery-10',
-        'battery-10-charge',
-        'battery-20',
-        'battery-20-charge',
-        'battery-30',
-        'battery-30-charge',
-        'battery-40',
-        'battery-40-charge',
-        'battery-50',
-        'battery-50-charge',
-        'battery-60',
-        'battery-60-charge',
-        'battery-70',
-        'battery-70-charge',
-        'battery-80',
-        'battery-80-charge',
-        'battery-90',
-        'battery-90-charge',
-        'battery-full',
-        'battery-full-charge',
-        'battery-full-charged',
-    )
 
     def __init__(self, **config):
         _Battery.__init__(self, **config)
         self.add_defaults(BatteryIcon.defaults)
+        self.scale = 1.0 / self.scale
+
         if self.theme_path:
             self.length_type = bar.STATIC
             self.length = 0
         self.surfaces = {}
         self.current_icon = 'battery-missing'
+        self.icons = dict([(x, '{0}.png'.format(x)) for x in (
+            'battery-missing',
+            'battery-empty',
+            'battery-empty-charge',
+            'battery-10',
+            'battery-10-charge',
+            'battery-20',
+            'battery-20-charge',
+            'battery-30',
+            'battery-30-charge',
+            'battery-40',
+            'battery-40-charge',
+            'battery-50',
+            'battery-50-charge',
+            'battery-60',
+            'battery-60-charge',
+            'battery-70',
+            'battery-70-charge',
+            'battery-80',
+            'battery-80-charge',
+            'battery-90',
+            'battery-90-charge',
+            'battery-full',
+            'battery-full-charge',
+            'battery-full-charged',
+        )])
+        self.icons.update(self.custom_icons)
 
     def timer_setup(self):
         self.update()
@@ -311,8 +260,7 @@ class BatteryIcon(_Battery):
 
     def _configure(self, qtile, bar):
         base._TextBox._configure(self, qtile, bar)
-        if self.theme_path:
-            self.setup_images()
+        self.setup_images()
 
     def _get_icon_key(self):
         key = 'battery'
@@ -367,11 +315,33 @@ class BatteryIcon(_Battery):
             base._TextBox.draw(self)
 
     def setup_images(self):
-        d_imgs = images.Loader(self.theme_path)(*self.icon_names)
-        new_height = self.bar.height
-        surfs = self.surfaces
-        for key, img in d_imgs.items():
-            img.resize(height=new_height)
-            if img.width > self.length:
-                self.length = img.width + self.actual_padding
-            surfs[key] = img.pattern
+        for key, name in self.icons.items():
+            try:
+                path = os.path.join(self.theme_path, name)
+                img = cairocffi.ImageSurface.create_from_png(path)
+            except cairocffi.Error:
+                self.theme_path = None
+                self.qtile.log.warning('Battery Icon switching to text mode')
+                return
+            input_width = img.get_width()
+            input_height = img.get_height()
+
+            sp = input_height / (self.bar.height - 1)
+
+            width = input_width / sp
+            if width > self.length:
+                self.length = int(width) + self.actual_padding * 2
+
+            imgpat = cairocffi.SurfacePattern(img)
+
+            scaler = cairocffi.Matrix()
+
+            scaler.scale(sp, sp)
+            scaler.scale(self.scale, self.scale)
+            factor = (1 - 1 / self.scale) / 2
+            scaler.translate(-width * factor, -width * factor)
+            scaler.translate(self.actual_padding * -1, 0)
+            imgpat.set_matrix(scaler)
+
+            imgpat.set_filter(cairocffi.FILTER_BEST)
+            self.surfaces[key] = imgpat

@@ -389,6 +389,7 @@ def init_widgets_list():
                         border_color = colors[2],
                         fill_color = colors[8],
                         graph_color = colors[8],
+                        background=colors[1],
                         border_width = 1,
                         line_width = 1,
                         core = "all",
@@ -416,7 +417,7 @@ def init_widgets_list():
                         background=colors[1],
                         padding = 0,
                         fontsize=16
-                        ),                                       
+                        ),
                	arcomemory.Memory(
                         fmt='{MemUsed} MB\n{Memsza}%',
                         execute='urxvt -e htop',
@@ -433,7 +434,7 @@ def init_widgets_list():
                #          padding = 10,
                #          foreground = colors[2],
                #          background = colors[1]
-               #          ),               	
+               #          ),
                # widget.TextBox(
                #          font="FontAwesome",
                #          text="  ",
@@ -441,7 +442,7 @@ def init_widgets_list():
                #          background=colors[1],
                #          padding = 0,
                #          fontsize=16
-               #          ),                                       
+               #          ),
                # widget.Memory(
                #          font="Noto Sans",
                #          fmt = '{MemUsed}/{MemTotal}M',
@@ -497,7 +498,7 @@ def init_widgets_list():
                #          background=colors[1],
                #          padding = 0,
                #          fontsize=16
-               #          ),               
+               #          ),
                # widget.Battery(
                #          energy_now_file='charge_now',
                #          energy_full_file='charge_full',

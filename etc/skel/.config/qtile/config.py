@@ -379,6 +379,40 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                         ),
+               # widget.Net(
+               #          font="Noto Sans",
+               #          fontsize=12,
+               #          interface="enp0s31f6",
+               #          foreground=colors[2],
+               #          background=colors[1],
+               #          padding = 0,
+               #          ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.NetGraph(
+               #          font="Noto Sans",
+               #          fontsize=12,
+               #          bandwidth="down",
+               #          interface="auto",
+               #          fill_color = colors[8],
+               #          foreground=colors[2],
+               #          background=colors[1],
+               #          graph_color = colors[8],
+               #          border_color = colors[2],
+               #          padding = 0,
+               #          border_width = 1,
+               #          line_width = 1,
+               #          ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",

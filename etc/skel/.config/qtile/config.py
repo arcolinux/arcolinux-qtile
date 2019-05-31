@@ -466,86 +466,86 @@ def init_widgets_list():
                         background = colors[1]
                         ),
                # This is the standard Qtile memory widget
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[4],
-                        background=colors[1],
-                        padding = 0,
-                        fontsize=16
-                        ),
-               widget.Memory(
-                        font="Noto Sans",
-                        fmt = '{MemUsed}/{MemTotal}M',
-                        update_interval = 5,
-                        fontsize = 12,
-                        foreground = colors[5],
-                        background = colors[1],
-                        ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.TextBox(
+               #          font="FontAwesome",
+               #          text="  ",
+               #          foreground=colors[4],
+               #          background=colors[1],
+               #          padding = 0,
+               #          fontsize=16
+               #          ),
+               # widget.Memory(
+               #          font="Noto Sans",
+               #          fmt = '{MemUsed}/{MemTotal}M',
+               #          update_interval = 5,
+               #          fontsize = 12,
+               #          foreground = colors[5],
+               #          background = colors[1],
+               #          ),
                # # battery option 1  or ArcoLinux Horizontal icons by default
                # # Other options have been moved to the backup folder
                # # 3 extra possibilities for your battery usage
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               arcobattery.BatteryIcon(
-                        padding=0,
-                        scale=0.7,
-                        y_poss=2,
-                        theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
-                        update_interval = 5,
-                        background = colors[1]
-                        ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # arcobattery.BatteryIcon(
+               #          padding=0,
+               #          scale=0.7,
+               #          y_poss=2,
+               #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
+               #          update_interval = 5,
+               #          background = colors[1]
+               #          ),
                # Choose : battery option 2 or vertical icons
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.BatteryIcon(
-                        theme_path=home + "/.config/qtile/icons/battery_icons_vert"
-                        ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.BatteryIcon(
+               #          theme_path=home + "/.config/qtile/icons/battery_icons_vert"
+               #          ),
                # # Choose : battery option 3 or vertical icons from qtile
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.BatteryIcon(),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.BatteryIcon(),
                # # Choose : battery option 4 or never changing image with % and hour
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="  ",
-                        foreground=colors[9],
-                        background=colors[1],
-                        padding = 0,
-                        fontsize=16
-                        ),
-               widget.Battery(
-                        energy_now_file='charge_now',
-                        energy_full_file='charge_full',
-                        power_now_file='current_now',
-                        foreground=colors[5],
-                        background=colors[1],
-                        update_interval = 5
-                        ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.TextBox(
+               #          font="FontAwesome",
+               #          text="  ",
+               #          foreground=colors[9],
+               #          background=colors[1],
+               #          padding = 0,
+               #          fontsize=16
+               #          ),
+               # widget.Battery(
+               #          energy_now_file='charge_now',
+               #          energy_full_file='charge_full',
+               #          power_now_file='current_now',
+               #          foreground=colors[5],
+               #          background=colors[1],
+               #          update_interval = 5
+               #          ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,

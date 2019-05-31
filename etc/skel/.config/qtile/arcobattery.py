@@ -4,6 +4,24 @@ import cairocffi
 import os
 from libqtile import bar
 from libqtile.widget import base
+from pathlib import Path
+
+#configure the name of the battery automatically
+config = Path('/sys/class/power_supply/BAT0')
+if config.is_dir():
+    BAT_NAME = "BAT0"
+
+config = Path('/sys/class/power_supply/BAT1')
+if config.is_dir():
+    BAT_NAME = "BAT1"
+
+config = Path('/sys/class/power_supply/BAT2')
+if config.is_dir():
+    BAT_NAME = "BAT2"
+
+#Navigate to /sys/class/power_supply to check what the name is of your battery
+#Type it in manually
+#BAT_NAME = "..."
 
 BAT_DIR = '/sys/class/power_supply'
 CHARGED = 'Full'
@@ -31,7 +49,7 @@ class _Battery(base._TextBox):
     filenames = {}
 
     defaults = [
-        ('battery_name', 'BAT0', 'ACPI name of a battery, usually BAT0'),
+        ('battery_name', BAT_NAME, 'ACPI name of a battery, usually BAT0'),
         (
             'status_file',
             'status',

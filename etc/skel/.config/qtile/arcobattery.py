@@ -6,6 +6,8 @@ from libqtile import bar
 from libqtile.widget import base
 from pathlib import Path
 
+BAT_NAME = ""
+
 #configure the name of the battery automatically
 config = Path('/sys/class/power_supply/BAT0')
 if config.is_dir():

@@ -455,12 +455,12 @@ def init_widgets_list():
                         fontsize=16
                         ),
                	arcomemory.Memory(
-                        fmt='{MemUsed} MB\n{Memsza}%',
+                        fmt='{MemUsed} MB  {Memsza}%',
                         execute='urxvt -e htop',
                         padding=5,
                         margin=10,
                         font="Noto Sans",
-                        fontsize = 10,
+                        fontsize = 12,
                         update_interval=1,
                         foreground = colors[5],
                         background = colors[1]
@@ -563,6 +563,7 @@ def init_widgets_list():
                widget.Clock(
                         foreground = colors[5],
                         background = colors[1],
+                        fontsize = 12,
                         format="%Y-%m-%d %H:%M"
                         ),
                widget.Sep(

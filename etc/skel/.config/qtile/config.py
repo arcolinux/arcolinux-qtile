@@ -285,9 +285,9 @@ for i in groups:
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
-        #Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
 
 

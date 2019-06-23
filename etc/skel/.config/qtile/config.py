@@ -33,9 +33,7 @@ from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule
 from libqtile.command import lazy, Client
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
-from libqtile.manager import Qtile
 import arcobattery
-import arcomemory
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -457,57 +455,15 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-               	arcomemory.Memory(
-                        fmt='{MemUsed} MB  {Memsza}%',
-                        execute='urxvt -e htop',
-                        padding=5,
-                        margin=10,
+               widget.Memory(
                         font="Noto Sans",
+                        fmt = '{MemUsed}/{MemTotal}M',
+                        update_interval = 5,
                         fontsize = 12,
-                        update_interval=1,
                         foreground = colors[5],
-                        background = colors[1]
+                        background = colors[1],
                         ),
-               # This is the standard Qtile memory widget
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
-               # widget.TextBox(
-               #          font="FontAwesome",
-               #          text="  ",
-               #          foreground=colors[4],
-               #          background=colors[1],
-               #          padding = 0,
-               #          fontsize=16
-               #          ),
-               # widget.Memory(
-               #          font="Noto Sans",
-               #          fmt = '{MemUsed}/{MemTotal}M',
-               #          update_interval = 5,
-               #          fontsize = 12,
-               #          foreground = colors[5],
-               #          background = colors[1],
-               #          ),
-               # # battery option 1  or ArcoLinux Horizontal icons by default
-               # # Other options have been moved to the backup folder
-               # # 3 extra possibilities for your battery usage
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
-               # arcobattery.BatteryIcon(
-               #          padding=0,
-               #          scale=0.7,
-               #          y_poss=2,
-               #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
-               #          update_interval = 5,
-               #          background = colors[1]
-               #          ),
+
                widget.Sep(
                         linewidth = 1,
                         padding = 10,

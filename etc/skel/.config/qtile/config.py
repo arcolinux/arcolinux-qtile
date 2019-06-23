@@ -459,7 +459,7 @@ def init_widgets_list():
                arcomemory.Memory(
                         font="Noto Sans",
                         fmt = '{MemUsed}/{MemTotal}M',
-                        update_interval = 5,
+                        update_interval = 1,
                         fontsize = 12,
                         foreground = colors[5],
                         background = colors[1],

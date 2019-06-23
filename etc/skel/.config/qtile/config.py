@@ -463,7 +463,23 @@ def init_widgets_list():
                         foreground = colors[5],
                         background = colors[1],
                         ),
-
+               # # battery option 1  or ArcoLinux Horizontal icons by default
+               # # Other options have been moved to the backup folder
+               # # 3 extra possibilities for your battery usage
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # arcobattery.BatteryIcon(
+               #          padding=0,
+               #          scale=0.7,
+               #          y_poss=2,
+               #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
+               #          update_interval = 5,
+               #          background = colors[1]
+               #          ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,

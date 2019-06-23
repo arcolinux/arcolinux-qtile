@@ -34,6 +34,7 @@ from libqtile.command import lazy, Client
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
 import arcobattery
+import arcomemory
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -455,7 +456,7 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-               widget.Memory(
+               arcomemory.Memory(
                         font="Noto Sans",
                         fmt = '{MemUsed}/{MemTotal}M',
                         update_interval = 5,

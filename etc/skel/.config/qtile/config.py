@@ -465,8 +465,6 @@ def init_widgets_list():
                         background = colors[1],
                         ),
                # # battery option 1  or ArcoLinux Horizontal icons by default
-               # # Other options have been moved to the backup folder
-               # # 3 extra possibilities for your battery usage
                # widget.Sep(
                #          linewidth = 1,
                #          padding = 10,

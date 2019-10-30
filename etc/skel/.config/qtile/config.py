@@ -61,6 +61,7 @@ keys = [
 # SUPER + FUNCTION KEYS
 
     Key([mod], "e", lazy.spawn('atom')),
+    Key([mod], "c", lazy.spawn('conky-toggle')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "m", lazy.spawn('pragha')),
     Key([mod], "q", lazy.window.kill()),
@@ -95,6 +96,8 @@ keys = [
 
 # CONTROL + ALT KEYS
 
+    Key(["mod1", "control"], "Next", lazy.spawn('conky-rotate -n')),
+    Key(["mod1", "control"], "Prior", lazy.spawn('conky-rotate -p')),
     Key(["mod1", "control"], "a", lazy.spawn('xfce4-appfinder')),
     Key(["mod1", "control"], "b", lazy.spawn('thunar')),
     Key(["mod1", "control"], "c", lazy.spawn('catfish')),

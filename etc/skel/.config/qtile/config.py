@@ -55,7 +55,6 @@ def window_to_next_group(qtile):
         i = qtile.groups.index(qtile.currentGroup)
         qtile.currentWindow.togroup(qtile.groups[i + 1].name)
 
-
 keys = [
 
 # SUPER + FUNCTION KEYS
@@ -71,7 +70,7 @@ keys = [
     Key([mod], "w", lazy.spawn('vivaldi-stable')),
     Key([mod], "x", lazy.spawn('oblogout')),
     Key([mod], "Escape", lazy.spawn('xkill')),
-    Key([mod], "Return", lazy.spawn('urxvt')),
+    Key([mod], "Return", lazy.spawn('termite')),
     Key([mod], "F1", lazy.spawn('vivaldi-stable')),
     Key([mod], "F2", lazy.spawn('atom')),
     Key([mod], "F3", lazy.spawn('inkscape')),
@@ -111,11 +110,11 @@ keys = [
     Key(["mod1", "control"], "p", lazy.spawn('pamac-manager')),
     Key(["mod1", "control"], "r", lazy.spawn('rofi-theme-selector')),
     Key(["mod1", "control"], "s", lazy.spawn('spotify')),
-    Key(["mod1", "control"], "t", lazy.spawn('urxvt')),
+    Key(["mod1", "control"], "t", lazy.spawn('termite')),
     Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
     Key(["mod1", "control"], "v", lazy.spawn('vivaldi-stable')),
     Key(["mod1", "control"], "w", lazy.spawn('atom')),
-    Key(["mod1", "control"], "Return", lazy.spawn('urxvt')),
+    Key(["mod1", "control"], "Return", lazy.spawn('termite')),
 
 # ALT + ... KEYS
 

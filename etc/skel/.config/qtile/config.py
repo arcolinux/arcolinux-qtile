@@ -57,6 +57,9 @@ def window_to_next_group(qtile):
 
 keys = [
 
+# FUNCTION KEYS
+    Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
+
 # SUPER + FUNCTION KEYS
 
     Key([mod], "e", lazy.spawn('atom')),

@@ -21,7 +21,7 @@ function run {
 #setxkbmap -layout be
 
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-scale ~/.config/qtile/wall.jpg &
+feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #start the conky to learn the shortcuts
 (conky -c $HOME/.config/qtile/scripts/system-overview) &
 

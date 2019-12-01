@@ -594,6 +594,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'feh'},
     {'wmclass': 'Galculator'},
     {'wmclass': 'Oblogout'},
+    {'wmclass': 'xfce4-terminal'},
     {'wname': 'branchdialog'},
     {'wname': 'Open File'},
     {'wname': 'pinentry'},

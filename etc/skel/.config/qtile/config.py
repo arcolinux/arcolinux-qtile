@@ -562,9 +562,9 @@ dgroups_app_rules = []
 #     #########################################################
 #     ################ assgin apps to groups ##################
 #     #########################################################
-#     d["1"] = ["Navigator", "vivaldi-stable", "chromium", "brave-browser", "google-chrome" ]
+#     d["1"] = ["Navigator", "vivaldi-stable", "vivaldi-snapshot" "chromium", "brave-browser", "google-chrome" ]
 #     d["2"] = ["subl3", "atom", "geany", "brackets", "code-oss", "code" ]
-#     d["3"] = ["inkscape", "nomacs", ]
+#     d["3"] = ["inkscape", "nomacs", "ristretto", "nitrogen", "feh" ]
 #     d["4"] = ["gimp", ]
 #     d["5"] = ["org.gnome.meld", ]
 #     d["6"] = ["vlc", ]

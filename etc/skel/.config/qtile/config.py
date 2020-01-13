@@ -562,7 +562,7 @@ dgroups_app_rules = []
 #     #########################################################
 #     ################ assgin apps to groups ##################
 #     #########################################################
-#     d["1"] = ["Navigator", "vivaldi-stable", "vivaldi-snapshot" "chromium", "brave-browser", "google-chrome" ]
+#     d["1"] = ["Navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave-browser" ]
 #     d["2"] = ["subl3", "atom", "geany", "brackets", "code-oss", "code" ]
 #     d["3"] = ["inkscape", "nomacs", "ristretto", "nitrogen", "feh" ]
 #     d["4"] = ["gimp", ]
@@ -570,7 +570,7 @@ dgroups_app_rules = []
 #     d["6"] = ["vlc", ]
 #     d["7"] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer", ]
 #     d["8"] = ["thunar", "nemo", "caja", "org.gnome.Nautilus", "pcmanfm", "pcmanfm-qt" ]
-#     d["9"] = ["evolution", "geary" ]
+#     d["9"] = ["evolution", "geary", "Mail", "Thunderbird" ]
 #     d["0"] = ["spotify", "pragha", "clementine", "deadbeef", "audacious" ]
 #     ##########################################################
 #     wm_class = client.window.get_wm_class()[0]

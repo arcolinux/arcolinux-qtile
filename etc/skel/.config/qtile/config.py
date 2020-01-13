@@ -569,9 +569,9 @@ dgroups_app_rules = []
 #     d["5"] = ["org.gnome.meld", ]
 #     d["6"] = ["vlc", ]
 #     d["7"] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer", ]
-#     d["8"] = ["thunar", "nemo", "caja", "org.gnome.Nautilus", ]
+#     d["8"] = ["thunar", "nemo", "caja", "org.gnome.Nautilus", "pcmanfm", "pcmanfm-qt" ]
 #     d["9"] = ["evolution", "geary" ]
-#     d["0"] = ["spotify", "pragha", "clementine", "deadbeef", ]
+#     d["0"] = ["spotify", "pragha", "clementine", "deadbeef", "audacious" ]
 #     ##########################################################
 #     wm_class = client.window.get_wm_class()[0]
 #

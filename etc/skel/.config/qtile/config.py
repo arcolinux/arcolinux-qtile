@@ -557,6 +557,7 @@ dgroups_app_rules = []
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 # BEGIN
 
+<<<<<<< HEAD
 @hook.subscribe.client_new
 def assign_app_group(client):
     d = {}
@@ -588,6 +589,32 @@ def assign_app_group(client):
             group = list(d.keys())[i]
             client.togroup(group)
             client.group.cmd_toscreen()
+=======
+# @hook.subscribe.client_new
+# def assign_app_group(client):
+#     d = {}
+#     #########################################################
+#     ################ assgin apps to groups ##################
+#     #########################################################
+#     d["1"] = ["Navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave-browser" ]
+#     d["2"] = ["subl3", "atom", "geany", "brackets", "code-oss", "code" ]
+#     d["3"] = ["inkscape", "nomacs", "ristretto", "nitrogen", "feh" ]
+#     d["4"] = ["gimp", ]
+#     d["5"] = ["org.gnome.meld", ]
+#     d["6"] = ["vlc", ]
+#     d["7"] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer", ]
+#     d["8"] = ["thunar", "nemo", "caja", "org.gnome.Nautilus", "pcmanfm", "pcmanfm-qt" ]
+#     d["9"] = ["evolution", "geary", "Mail", "Thunderbird" ]
+#     d["0"] = ["spotify", "pragha", "clementine", "deadbeef", "audacious" ]
+#     ##########################################################
+#     wm_class = client.window.get_wm_class()[0]
+#
+#     for i in range(len(d)):
+#         if wm_class in list(d.values())[i]:
+#             group = list(d.keys())[i]
+#             client.togroup(group)
+#             client.group.cmd_toscreen()
+>>>>>>> b4bf72e363a40d1b27990c7541f8c27adfa39c92
 
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME

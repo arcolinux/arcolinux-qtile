@@ -105,7 +105,7 @@ keys = [
     Key(["mod1", "control"], "a", lazy.spawn('xfce4-appfinder')),
     Key(["mod1", "control"], "b", lazy.spawn('thunar')),
     Key(["mod1", "control"], "c", lazy.spawn('catfish')),
-    Key(["mod1", "control"], "e", lazy.spawn('evolution')),
+    Key(["mod1", "control"], "e", lazy.spawn('arcolinux-tweak-tool')),
     Key(["mod1", "control"], "f", lazy.spawn('firefox')),
     Key(["mod1", "control"], "g", lazy.spawn('chromium -no-default-browser-check')),
     Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
@@ -118,7 +118,7 @@ keys = [
     Key(["mod1", "control"], "t", lazy.spawn('termite')),
     Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
     Key(["mod1", "control"], "v", lazy.spawn('vivaldi-stable')),
-    Key(["mod1", "control"], "w", lazy.spawn('atom')),
+    Key(["mod1", "control"], "w", lazy.spawn('arcolinux-welcome-app')),
     Key(["mod1", "control"], "Return", lazy.spawn('termite')),
 
 # ALT + ... KEYS
@@ -619,6 +619,8 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
+    {'wmclass': 'Arcolinux-welcome-app.py'},
+    {'wmclass': 'Arcolinux-tweak-tool.py'},
     {'wmclass': 'confirm'},
     {'wmclass': 'dialog'},
     {'wmclass': 'download'},

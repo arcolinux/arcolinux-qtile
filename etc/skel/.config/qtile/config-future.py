@@ -124,7 +124,6 @@ keys = [
 
 # ALT + ... KEYS
 
-    Key(["mod1"], "k", lazy.spawn('arcolinux-logout')),
     Key(["mod1"], "f", lazy.spawn('variety -f')),
     Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
     Key(["mod1"], "n", lazy.spawn('variety -n')),

@@ -30,11 +30,11 @@ import re
 import socket
 import subprocess
 from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule
-from libqtile.command import lazy, Client
+from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
 import arcobattery
-import arcomemory
+#import arcomemory
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -465,14 +465,14 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-               arcomemory.Memory(
-                        font="Noto Sans",
-                        fmt = '{MemUsed}/{MemTotal}M',
-                        update_interval = 1,
-                        fontsize = 12,
-                        foreground = colors[5],
-                        background = colors[1],
-                        ),
+               #arcomemory.Memory(
+               #         font="Noto Sans",
+               #         fmt = '{MemUsed}/{MemTotal}M',
+               #         update_interval = 1,
+               #         fontsize = 12,
+               #         foreground = colors[5],
+               #         background = colors[1],
+               #         ),
                # # battery option 1  or ArcoLinux Horizontal icons by default
                # widget.Sep(
                #          linewidth = 1,

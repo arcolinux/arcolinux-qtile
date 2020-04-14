@@ -34,7 +34,6 @@ from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
 import arcobattery
-#import arcomemory
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -465,7 +464,7 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-               # # battery option 1  or ArcoLinux Horizontal icons by default
+               # # battery option 1  ArcoLinux Horizontal icons do not forget to import arcobattery at the top
                # widget.Sep(
                #          linewidth = 1,
                #          padding = 10,
@@ -480,6 +479,20 @@ def init_widgets_list():
                #          update_interval = 5,
                #          background = colors[1]
                #          ),
+               # # battery option 2  from Qtile
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.Battery(
+               #        font="Noto Sans",
+               #        update_interval = 10,
+               #        fontsize = 12,
+               #        foreground = colors[5],
+               #        background = colors[1],
+	       #        ),
                widget.Memory(
                        font="Noto Sans",
                        format = '{MemUsed}M/{MemTotal}M',

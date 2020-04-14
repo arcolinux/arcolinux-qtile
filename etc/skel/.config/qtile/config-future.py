@@ -465,14 +465,6 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-               #arcomemory.Memory(
-               #         font="Noto Sans",
-               #         fmt = '{MemUsed}/{MemTotal}M',
-               #         update_interval = 1,
-               #         fontsize = 12,
-               #         foreground = colors[5],
-               #         background = colors[1],
-               #         ),
                # # battery option 1  or ArcoLinux Horizontal icons by default
                # widget.Sep(
                #          linewidth = 1,
@@ -488,6 +480,14 @@ def init_widgets_list():
                #          update_interval = 5,
                #          background = colors[1]
                #          ),
+               widget.Memory(
+                       font="Noto Sans",
+                       format = '{MemUsed}M/{MemTotal}M',
+                       update_interval = 1,
+                       fontsize = 12,
+                       foreground = colors[5],
+                       background = colors[1],
+                       ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,

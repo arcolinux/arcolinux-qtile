@@ -432,12 +432,6 @@ def init_widgets_list():
                #          padding = 3,
                #          threshold = 80
                #          ),
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
                # # battery option 1  ArcoLinux Horizontal icons do not forget to import arcobattery at the top
                # widget.Sep(
                #          linewidth = 1,

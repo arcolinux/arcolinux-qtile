@@ -33,8 +33,7 @@ from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.widget import Spacer
-import arcobattery
-#import arcomemory
+#import arcobattery
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -424,6 +423,44 @@ def init_widgets_list():
                #          foreground = colors[2],
                #          background = colors[1]
                #          ),
+               # # do not activate in Virtualbox - will break qtile
+               # widget.ThermalSensor(
+               #          foreground = colors[5],
+               #          foreground_alert = colors[6],
+               #          background = colors[1],
+               #          metric = True,
+               #          padding = 3,
+               #          threshold = 80
+               #          ),
+               # # battery option 1  ArcoLinux Horizontal icons do not forget to import arcobattery at the top
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # arcobattery.BatteryIcon(
+               #          padding=0,
+               #          scale=0.7,
+               #          y_poss=2,
+               #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
+               #          update_interval = 5,
+               #          background = colors[1]
+               #          ),
+               # # battery option 2  from Qtile
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
+               # widget.Battery(
+               #          font="Noto Sans",
+               #          update_interval = 10,
+               #          fontsize = 12,
+               #          foreground = colors[5],
+               #          background = colors[1],
+	           #          ),
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
@@ -442,15 +479,6 @@ def init_widgets_list():
                         core = "all",
                         type = "box"
                         ),
-                        # do not activate in Virtualbox - will break qtile
-#              widget.ThermalSensor(
-#                        foreground = colors[5],
-#                        foreground_alert = colors[6],
-#                        background = colors[1],
-#                        metric = True,
-#                        padding = 3,
-#                        threshold = 80
-#                        ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
@@ -465,28 +493,13 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=16
                         ),
-               # # battery option 1  or ArcoLinux Horizontal icons by default
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
-               # arcobattery.BatteryIcon(
-               #          padding=0,
-               #          scale=0.7,
-               #          y_poss=2,
-               #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
-               #          update_interval = 5,
-               #          background = colors[1]
-               #          ),
                widget.Memory(
-                       font="Noto Sans",
-                       format = '{MemUsed}M/{MemTotal}M',
-                       update_interval = 1,
-                       fontsize = 12,
-                       foreground = colors[5],
-                       background = colors[1],
+                        font="Noto Sans",
+                        format = '{MemUsed}M/{MemTotal}M',
+                        update_interval = 1,
+                        fontsize = 12,
+                        foreground = colors[5],
+                        background = colors[1],
                        ),
                widget.Sep(
                         linewidth = 1,

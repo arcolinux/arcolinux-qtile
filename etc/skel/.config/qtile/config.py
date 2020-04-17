@@ -71,7 +71,7 @@ keys = [
     Key([mod], "t", lazy.spawn('urxvt')),
     Key([mod], "v", lazy.spawn('pavucontrol')),
     Key([mod], "w", lazy.spawn('vivaldi-stable')),
-    Key([mod], "x", lazy.spawn('oblogout')),
+    Key([mod], "x", lazy.spawn('arcolinux-logout')),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn('termite')),
     Key([mod], "KP_Enter", lazy.spawn('termite')),
@@ -108,7 +108,8 @@ keys = [
     Key(["mod1", "control"], "f", lazy.spawn('firefox')),
     Key(["mod1", "control"], "g", lazy.spawn('chromium -no-default-browser-check')),
     Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
-    Key(["mod1", "control"], "k", lazy.spawn('slimlock')),
+    Key(["mod1", "control"], "k", lazy.spawn('arcolinux-logout')),
+    Key(["mod1", "control"], "l", lazy.spawn('arcolinux-logout')),
     Key(["mod1", "control"], "m", lazy.spawn('xfce4-settings-manager')),
     Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
     Key(["mod1", "control"], "p", lazy.spawn('pamac-manager')),
@@ -122,7 +123,6 @@ keys = [
 
 # ALT + ... KEYS
 
-    Key(["mod1"], "k", lazy.spawn('slimlock')),
     Key(["mod1"], "f", lazy.spawn('variety -f')),
     Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
     Key(["mod1"], "n", lazy.spawn('variety -n')),
@@ -648,7 +648,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'Arandr'},
     {'wmclass': 'feh'},
     {'wmclass': 'Galculator'},
-    {'wmclass': 'Oblogout'},
+    {'wmclass': 'arcolinux-logout'},
     {'wmclass': 'xfce4-terminal'},
     {'wname': 'branchdialog'},
     {'wname': 'Open File'},

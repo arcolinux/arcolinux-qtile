@@ -28,6 +28,10 @@ feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #start the conky to learn the shortcuts
 (conky -c $HOME/.config/qtile/scripts/system-overview) &
 
+#start sxhkd to replace Qtile native key-bindings
+run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
+
+
 #starting utility applications at boot time
 run variety &
 run nm-applet &

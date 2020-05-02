@@ -506,7 +506,7 @@ focus_on_window_activation = "focus" # or smart
 wmname = "LG3D"
 
 ###############################################################################
-# END OP FILE
+# END OF FILE
 ###############################################################################
 
 ###### KEYS THAT WERE MOVED TO SXHKD

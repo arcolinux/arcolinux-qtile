@@ -8,11 +8,11 @@
 
 # Vivaldi
 super + F1
-    vivaldi-stable
+	vivaldi-stable
 
 # Atom
 super + F2
-    atom
+	atom
 
 #Inkscape
 super + F3
@@ -53,7 +53,6 @@ super + F11
 #Rofi
 super + F12
     rofi -show run
-
 
 #################################################################
 # SUPER + ... KEYS
@@ -106,7 +105,7 @@ super + Escape
 #Keyboard dependent
 #termite
 super + KP_Enter
-    termite
+	termite
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -114,30 +113,24 @@ super + KP_Enter
 
 #File-Manager
 super + shift + Return
-    thunar
+	thunar
 
 #Keyboard dependent
 #File-Manager
 #super + shift + KP_Enter
-#   thunar
+#	thunar
 
 #dmenu
 super + shift + d
-    dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 #reload sxhkd:
 super + shift + s
-    pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd
 
 #Keyboard dependent
 #super + shift + KP_Enter
-#   thunar
-
-
-
-#################################################################
-# CONTROL + ALT KEYS
-#################################################################
+#	thunar
 
 
 #################################################################
@@ -238,7 +231,6 @@ ctrl + alt + a
 #     termite
 
 
-
 #################################################################
 # ALT + ... KEYS
 #################################################################
@@ -284,7 +276,6 @@ alt + F3
     xfce4-appfinder
 
 
-
 #################################################################
 #VARIETY KEYS WITH PYWAL
 #################################################################
@@ -309,7 +300,6 @@ alt + shift + f
 alt + shift + u
     wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
 
-
 #################################################################
 # CONTROL + SHIFT KEYS
 #################################################################
@@ -317,7 +307,6 @@ alt + shift + u
 #Xcfe4-TaskManager
 ctrl + shift + Escape
     xfce4-taskmanager
-
 
 
 #################################################################
@@ -336,6 +325,7 @@ ctrl + Print
 ctrl + shift + Print
      gnome-screenshot -i
 
+
 #################################################################
 #     FUNCTION KEYS
 #################################################################
@@ -344,6 +334,7 @@ ctrl + shift + Print
 F12
     xfce4-terminal --drop-down
 
+
 #################################################################
 #     MULTIMEDIA KEYS
 #################################################################
@@ -351,17 +342,14 @@ F12
 #Raises volume
 XF86AudioRaiseVolume
     amixer set Master 10%+
-    #amixer -q set Master 5%+ -> Qtile
 
 #Lowers volume
 XF86AudioLowerVolume
     amixer set Master 10%-
-    #amixer -q set Master 5%- -> Qtile
 
 #Mute
 XF86AudioMute
     amixer -D pulse set Master 1+ toggle
-    #amixer -q set Master toggle -> from Qtile
 
 #Playerctl works for Pragha, Spotify and others
 #Delete the line for playerctl if you want to use mpc
@@ -396,7 +384,6 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 10
 
-
 #########################
 #        POLYBAR        #
 #########################
@@ -417,7 +404,7 @@ XF86MonBrightnessDown
 # CTRL + ALT KEYS
 #################################################################
 
-#Picom (a.k.a Compton) Toggle
+#Picom Toggle
 ctrl + alt + o
     ~/.config/qtile/scripts/picom-toggle.sh
 
@@ -433,7 +420,7 @@ super + f
 super + n
     qtile-cmd -o layout -f normalize
 
-#kill Window
+#kill
 super + q
     qtile-cmd -o window -f kill
 

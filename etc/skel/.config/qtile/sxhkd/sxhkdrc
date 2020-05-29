@@ -143,7 +143,7 @@ ctrl + alt + w
 
 #arcolinux-tweak-tool
 ctrl + alt + e
-    arcolinux-tweak-tool     
+    arcolinux-tweak-tool
 
 #conky-rotate
 ctrl + alt + Next
@@ -153,9 +153,6 @@ ctrl + alt + Next
 ctrl + alt + Prior
     conky-rotate -p
 
-#Atom
-ctrl + alt + w
-     atom
 #File-Manager
 ctrl + alt + b
      thunar
@@ -388,7 +385,7 @@ XF86MonBrightnessDown
 #        POLYBAR        #
 #########################
 
-# Qtile has its own bar 
+# Qtile has its own bar
 #Hide polybar
 #super + y
 #    polybar-msg cmd toggle
@@ -446,7 +443,7 @@ super + space
 
 # Move focus to other monitor
 super + BackSpace
-    qtile -o cmd -f next_screen 
+    qtile -o cmd -f next_screen
 
 #################################################################
 # SUPER + SHIFT KEYS

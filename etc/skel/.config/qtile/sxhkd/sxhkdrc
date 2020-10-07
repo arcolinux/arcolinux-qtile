@@ -165,10 +165,6 @@ ctrl + alt + c
 ctrl + alt + g
     chromium -no-default-browser-check
 
-#Evolution
-ctrl + alt + e
-     evolution
-
 #Firefox
 ctrl + alt + f
      firefox

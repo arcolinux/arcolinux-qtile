@@ -450,8 +450,8 @@ super + shift + q
     qtile-cmd -o window -f kill
 
 #Quit Qtile
-#super + shift + x
-#    qtile-cmd -o cmd -f shutdown
+super + shift + x
+    qtile-cmd -o cmd -f shutdown
 
 # FLIP LAYOUT FOR MONADTALL/MONADWIDE
 super + shift + f

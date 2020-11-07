@@ -71,8 +71,8 @@ super + c
     conky-toggle
 
 #Htop
-super + h
-    urxvt 'htop task manager' -e htop
+#super + h
+#    urxvt 'htop task manager' -e htop
 
 #arcolinux-logout
 super + x

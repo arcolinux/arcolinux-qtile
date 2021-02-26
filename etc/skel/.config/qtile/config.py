@@ -64,14 +64,14 @@ keys = [
 
     #Key([mod], "e", lazy.spawn('atom')),
     #Key([mod], "c", lazy.spawn('conky-toggle')),
-    #Key([mod], "f", lazy.window.toggle_fullscreen()),
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
     #Key([mod], "m", lazy.spawn('pragha')),
-    #Key([mod], "q", lazy.window.kill()),
+    Key([mod], "q", lazy.window.kill()),
     #Key([mod], "r", lazy.spawn('rofi-theme-selector')),
     #Key([mod], "t", lazy.spawn('urxvt')),
     #Key([mod], "v", lazy.spawn('pavucontrol')),
     #Key([mod], "w", lazy.spawn('vivaldi-stable')),
-    #Key([mod], "x", lazy.spawn('oblogout')),
+    #Key([mod], "x", lazy.spawn('arcolinux-logout')),
     #Key([mod], "Escape", lazy.spawn('xkill')),
     #Key([mod], "Return", lazy.spawn('termite')),
     #Key([mod], "KP_Enter", lazy.spawn('termite')),
@@ -92,10 +92,8 @@ keys = [
 
     #Key([mod, "shift"], "Return", lazy.spawn('thunar')),
     #Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=18'")),
-    #Key([mod, "shift"], "q", lazy.window.kill()),
-    #Key([mod, "shift"], "r", lazy.restart()),
-    #Key([mod, "control"], "r", lazy.restart()),
-    # Key([mod, "shift"], "x", lazy.shutdown()),
+    Key([mod, "shift"], "q", lazy.window.kill()),
+    Key([mod, "shift"], "r", lazy.restart()),
 
 # CONTROL + ALT KEYS
 
@@ -122,9 +120,7 @@ keys = [
 
 # ALT + ... KEYS
 
-    #Key(["mod1"], "k", lazy.spawn('slimlock')),
     #Key(["mod1"], "f", lazy.spawn('variety -f')),
-    #Key(["mod1"], "h", lazy.spawn('urxvt -e htop')),
     #Key(["mod1"], "n", lazy.spawn('variety -n')),
     #Key(["mod1"], "p", lazy.spawn('variety -p')),
     #Key(["mod1"], "t", lazy.spawn('variety -t')),
@@ -174,18 +170,18 @@ keys = [
 #    Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
 
 # QTILE LAYOUT KEYS
-    #Key([mod], "n", lazy.layout.normalize()),
-    #Key([mod], "space", lazy.next_layout()),
+    Key([mod], "n", lazy.layout.normalize()),
+    Key([mod], "space", lazy.next_layout()),
 
 # CHANGE FOCUS
-    #Key([mod], "Up", lazy.layout.up()),
-    #Key([mod], "Down", lazy.layout.down()),
-    #Key([mod], "Left", lazy.layout.left()),
-    #Key([mod], "Right", lazy.layout.right()),
-    #Key([mod], "k", lazy.layout.up()),
-    #Key([mod], "j", lazy.layout.down()),
-    #Key([mod], "h", lazy.layout.left()),
-    #Key([mod], "l", lazy.layout.right()),
+    Key([mod], "Up", lazy.layout.up()),
+    Key([mod], "Down", lazy.layout.down()),
+    Key([mod], "Left", lazy.layout.left()),
+    Key([mod], "Right", lazy.layout.right()),
+    Key([mod], "k", lazy.layout.up()),
+    Key([mod], "j", lazy.layout.down()),
+    Key([mod], "h", lazy.layout.left()),
+    Key([mod], "l", lazy.layout.right()),
 
 
 # RESIZE UP, DOWN, LEFT, RIGHT
@@ -236,28 +232,28 @@ keys = [
 
 
 # FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    #Key([mod, "shift"], "f", lazy.layout.flip()),
+    Key([mod, "shift"], "f", lazy.layout.flip()),
 
 # FLIP LAYOUT FOR BSP
-    #Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    #Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    #Key([mod, "mod1"], "l", lazy.layout.flip_right()),
-    #Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
+    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
+    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
 
 # MOVE WINDOWS UP OR DOWN BSP LAYOUT
-    #Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    #Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    #Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
-    #Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
 # MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
-    #Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
-    #Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
-    #Key([mod, "shift"], "Left", lazy.layout.swap_left()),
-    #Key([mod, "shift"], "Right", lazy.layout.swap_right()),
+    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "Left", lazy.layout.swap_left()),
+    Key([mod, "shift"], "Right", lazy.layout.swap_right()),
 
 # TOGGLE FLOATING LAYOUT
-    #Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+    Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
     ]
 
@@ -290,6 +286,7 @@ for i in groups:
 #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key([mod], "Tab", lazy.screen.next_group()),
+        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
         Key(["mod1"], "Tab", lazy.screen.next_group()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 

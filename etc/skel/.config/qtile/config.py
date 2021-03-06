@@ -56,118 +56,19 @@ def window_to_next_group(qtile):
 
 keys = [
 
-# FUNCTION KEYS
-
-    #Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
+# Most of our keybindings are in sxhkd file - except these
 
 # SUPER + FUNCTION KEYS
 
-    #Key([mod], "e", lazy.spawn('atom')),
-    #Key([mod], "c", lazy.spawn('conky-toggle')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-    #Key([mod], "m", lazy.spawn('pragha')),
     Key([mod], "q", lazy.window.kill()),
-    #Key([mod], "r", lazy.spawn('rofi-theme-selector')),
-    #Key([mod], "t", lazy.spawn('urxvt')),
-    #Key([mod], "v", lazy.spawn('pavucontrol')),
-    #Key([mod], "w", lazy.spawn('vivaldi-stable')),
-    #Key([mod], "x", lazy.spawn('arcolinux-logout')),
-    #Key([mod], "Escape", lazy.spawn('xkill')),
-    #Key([mod], "Return", lazy.spawn('termite')),
-    #Key([mod], "KP_Enter", lazy.spawn('termite')),
-    #Key([mod], "F1", lazy.spawn('vivaldi-stable')),
-    #Key([mod], "F2", lazy.spawn('atom')),
-    #Key([mod], "F3", lazy.spawn('inkscape')),
-    #Key([mod], "F4", lazy.spawn('gimp')),
-    #Key([mod], "F5", lazy.spawn('meld')),
-    #Key([mod], "F6", lazy.spawn('vlc --video-on-top')),
-    #Key([mod], "F7", lazy.spawn('virtualbox')),
-    #Key([mod], "F8", lazy.spawn('thunar')),
-    #Key([mod], "F9", lazy.spawn('evolution')),
-    #Key([mod], "F10", lazy.spawn("spotify")),
-    #Key([mod], "F11", lazy.spawn('rofi -show run -fullscreen')),
-    #Key([mod], "F12", lazy.spawn('rofi -show run')),
+
 
 # SUPER + SHIFT KEYS
 
-    #Key([mod, "shift"], "Return", lazy.spawn('thunar')),
-    #Key([mod, "shift"], "d", lazy.spawn("dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=18'")),
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
 
-# CONTROL + ALT KEYS
-
-    #Key(["mod1", "control"], "Next", lazy.spawn('conky-rotate -n')),
-    #Key(["mod1", "control"], "Prior", lazy.spawn('conky-rotate -p')),
-    #Key(["mod1", "control"], "a", lazy.spawn('xfce4-appfinder')),
-    #Key(["mod1", "control"], "b", lazy.spawn('thunar')),
-    #Key(["mod1", "control"], "c", lazy.spawn('catfish')),
-    #Key(["mod1", "control"], "e", lazy.spawn('evolution')),
-    #Key(["mod1", "control"], "f", lazy.spawn('firefox')),
-    #Key(["mod1", "control"], "g", lazy.spawn('chromium -no-default-browser-check')),
-    #Key(["mod1", "control"], "i", lazy.spawn('nitrogen')),
-    #Key(["mod1", "control"], "k", lazy.spawn('slimlock')),
-    #Key(["mod1", "control"], "m", lazy.spawn('xfce4-settings-manager')),
-    #Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/compton-toggle.sh')),
-    #Key(["mod1", "control"], "p", lazy.spawn('pamac-manager')),
-    #Key(["mod1", "control"], "r", lazy.spawn('rofi-theme-selector')),
-    #Key(["mod1", "control"], "s", lazy.spawn('spotify')),
-    #Key(["mod1", "control"], "t", lazy.spawn('termite')),
-    #Key(["mod1", "control"], "u", lazy.spawn('pavucontrol')),
-    #Key(["mod1", "control"], "v", lazy.spawn('vivaldi-stable')),
-    #Key(["mod1", "control"], "w", lazy.spawn('atom')),
-    #Key(["mod1", "control"], "Return", lazy.spawn('termite')),
-
-# ALT + ... KEYS
-
-    #Key(["mod1"], "f", lazy.spawn('variety -f')),
-    #Key(["mod1"], "n", lazy.spawn('variety -n')),
-    #Key(["mod1"], "p", lazy.spawn('variety -p')),
-    #Key(["mod1"], "t", lazy.spawn('variety -t')),
-    #Key(["mod1"], "Up", lazy.spawn('variety --pause')),
-    #Key(["mod1"], "Down", lazy.spawn('variety --resume')),
-    #Key(["mod1"], "Left", lazy.spawn('variety -p')),
-    #Key(["mod1"], "Right", lazy.spawn('variety -n')),
-    #Key(["mod1"], "F2", lazy.spawn('gmrun')),
-    #Key(["mod1"], "F3", lazy.spawn('xfce4-appfinder')),
-
-# VARIETY KEYS WITH PYWAL
-
-    #Key(["mod1", "shift"], "f", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -f')),
-    #Key(["mod1", "shift"], "p", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -p')),
-    #Key(["mod1", "shift"], "n", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -n')),
-    #Key(["mod1", "shift"], "u", lazy.spawn(home + '/.config/qtile/scripts/set-pywal.sh -u')),
-
-# CONTROL + SHIFT KEYS
-
-    #Key([mod2, "shift"], "Escape", lazy.spawn('xfce4-taskmanager')),
-
-# SCREENSHOTS
-
-    #Key([], "Print", lazy.spawn("scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),
-    #Key([mod2], "Print", lazy.spawn('xfce4-screenshooter')),
-    #Key([mod2, "shift"], "Print", lazy.spawn('gnome-screenshot -i')),
-
-# MULTIMEDIA KEYS
-
-# INCREASE/DECREASE BRIGHTNESS
-    #Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
-    #Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
-
-# INCREASE/DECREASE/MUTE VOLUME
-    #Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    #Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
-    #Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -q set Master 5%+")),
-
-    #Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
-    #Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
-    #Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
-    #Key([], "XF86AudioStop", lazy.spawn("playerctl stop")),
-
-#    Key([], "XF86AudioPlay", lazy.spawn("mpc toggle")),
-#    Key([], "XF86AudioNext", lazy.spawn("mpc next")),
-#    Key([], "XF86AudioPrev", lazy.spawn("mpc prev")),
-#    Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
 
 # QTILE LAYOUT KEYS
     Key([mod], "n", lazy.layout.normalize()),

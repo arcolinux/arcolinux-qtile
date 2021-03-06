@@ -419,12 +419,12 @@ def init_widgets_list():
                         fontsize = 12,
                         format="%Y-%m-%d %H:%M"
                         ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[2],
-                        background = colors[1]
-                        ),
+               # widget.Sep(
+               #          linewidth = 1,
+               #          padding = 10,
+               #          foreground = colors[2],
+               #          background = colors[1]
+               #          ),
                widget.Systray(
                         background=colors[1],
                         icon_size=20,
@@ -495,7 +495,7 @@ dgroups_app_rules = []
 #     d[group_names[9]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
 #               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
 #     ######################################################################################
-#     
+#
 # wm_class = client.window.get_wm_class()[0]
 #
 #     for i in range(len(d)):

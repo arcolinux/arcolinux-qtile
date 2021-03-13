@@ -536,6 +536,7 @@ cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'Arcolinux-welcome-app.py'},
     {'wmclass': 'Arcolinux-tweak-tool.py'},
+    {'wmclass': 'Arcolinux-calamares-tool.py'},
     {'wmclass': 'confirm'},
     {'wmclass': 'dialog'},
     {'wmclass': 'download'},

@@ -94,18 +94,18 @@ super + v
 super + m
     pragha
 
-#Termite
+#urxvt
 super + Return
-    termite
+    urxvt
 
 #Xkill
 super + Escape
     xkill
 
 #Keyboard dependent
-#termite
+#urxvt
 super + KP_Enter
-	termite
+	urxvt
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -201,13 +201,13 @@ ctrl + alt + r
 ctrl + alt + s
    spotify
 
-#Termite
+#urxvt
 ctrl + alt + Return
-    termite
+    urxvt
 
-#termite
+#urxvt
 ctrl + alt + t
-    termite
+    urxvt
 
 #Vivaldi
 ctrl + alt + v
@@ -219,9 +219,9 @@ ctrl + alt + a
 
 
 #Keyboard dependent
-#termite
+#urxvt
 #ctrl + alt + KP_Enter
-#     termite
+#     urxvt
 
 
 #################################################################

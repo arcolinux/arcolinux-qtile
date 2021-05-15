@@ -48,11 +48,11 @@ super + F10
 
 #Rofi Fullscreen
 super + F11
-    rofi -show run -fullscreen
+    rofi -show drun -fullscreen
 
 #Rofi
 super + F12
-    rofi -show run
+    rofi -show drun
 
 #################################################################
 # SUPER + ... KEYS

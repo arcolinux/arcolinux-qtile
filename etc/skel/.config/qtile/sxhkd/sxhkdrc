@@ -260,9 +260,9 @@ alt + Up
 alt + Down
     variety --resume
 
-#Gmrun
+#Xfce4-appfinder
 alt + F2
-    gmrun
+    xfce4-appfinder --collapsed
 
 #Xfce4-appfinder
 alt + F3

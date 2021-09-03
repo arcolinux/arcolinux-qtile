@@ -29,9 +29,9 @@ import os
 import re
 import socket
 import subprocess
-from libqtile.config import Drag, Key, Screen, Group, Drag, Click, Rule
+from libqtile.config import Key, Screen, Group, Drag, Click, Rule, Match
 from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook
+from libqtile import qtile, layout, bar, widget, hook
 from libqtile.widget import Spacer
 #import arcobattery
 
@@ -41,18 +41,19 @@ mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
 
-
+# These functions allow moving windows between groups by direction.
+# Keys are defined further down
 @lazy.function
 def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+    if qtile.current_window is not None:
+        i = qtile.groups.index(qtile.current_group)
+        qtile.current_window.togroup(qtile.groups[i - 1].name)
 
 @lazy.function
 def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+    if qtile.current_window is not None:
+        i = qtile.groups.index(qtile.current_group)
+        qtile.current_window.togroup(qtile.groups[i + 1].name)
 
 keys = [
 
@@ -181,21 +182,62 @@ for i in range(len(group_names)):
             label=group_labels[i],
         ))
 
-for i in groups:
+for i in group_names:
     keys.extend([
 
 #CHANGE WORKSPACES
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod], "Tab", lazy.screen.next_group()),
-        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
-        Key(["mod1"], "Tab", lazy.screen.next_group()),
-        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
+        Key([mod], i,
+            lazy.group[i].toscreen()
+        ),
 
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
-        #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
+        Key([mod, "shift"], i,
+            lazy.window.togroup(i)
+        ),
+
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
+        Key([mod, "control"], i,
+            lazy.window.togroup(i),
+            lazy.group[i].toscreen()
+        ),
     ])
+
+keys.extend([
+
+    # CHANGE WORKSPACE BY DIRECTION.
+    # Can use tab or brackets
+    Key([mod], "Tab",
+        lazy.screen.next_group()
+    ),
+    Key([mod, "shift"], "Tab",
+        lazy.screen.prev_group()
+    ),
+    Key([mod], "bracketright",
+        lazy.screen.next_group()
+    ),
+    Key([mod], "bracketleft",
+        lazy.screen.prev_group()
+    ),
+
+    # MOVE WINDOW TO WORKSPACE BY DIRECTION
+    Key([mod, "shift"], "bracketright",
+        window_to_next_group
+    ),
+    Key([mod, "shift"], "bracketleft",
+        window_to_prev_group
+    ),
+
+    # MOVE WINDOW AND GO WITH IT
+    Key([mod, "control"], "bracketright",
+        window_to_next_group,
+        lazy.screen.next_group()
+    ),
+    Key([mod, "control"], "bracketleft",
+        window_to_prev_group,
+        lazy.screen.prev_group()
+    ),
+
+])
 
 
 def init_layout_theme():
@@ -534,29 +576,29 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
-    {'wmclass': 'Arcolinux-welcome-app.py'},
-    {'wmclass': 'Arcolinux-tweak-tool.py'},
-    {'wmclass': 'Arcolinux-calamares-tool.py'},
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},
-    {'wmclass': 'makebranch'},
-    {'wmclass': 'maketag'},
-    {'wmclass': 'Arandr'},
-    {'wmclass': 'feh'},
-    {'wmclass': 'Galculator'},
-    {'wmclass': 'arcolinux-logout'},
-    {'wmclass': 'xfce4-terminal'},
-    {'wname': 'branchdialog'},
-    {'wname': 'Open File'},
-    {'wname': 'pinentry'},
-    {'wmclass': 'ssh-askpass'},
+    Match(wm_class='Arcolinux-welcome-app.py'),
+    Match(wm_class='Arcolinux-tweak-tool.py'),
+    Match(wm_class='Arcolinux-calamares-tool.py'),
+    Match(wm_class='confirm'),
+    Match(wm_class='dialog'),
+    Match(wm_class='download'),
+    Match(wm_class='error'),
+    Match(wm_class='file_progress'),
+    Match(wm_class='notification'),
+    Match(wm_class='splash'),
+    Match(wm_class='toolbar'),
+    Match(wm_class='confirmreset'),
+    Match(wm_class='makebranch'),
+    Match(wm_class='maketag'),
+    Match(wm_class='Arandr'),
+    Match(wm_class='feh'),
+    Match(wm_class='Galculator'),
+    Match(wm_class='arcolinux-logout'),
+    Match(wm_class='xfce4-terminal'),
+    Match(wm_class='ssh-askpass'),
+    Match(title='branchdialog'),
+    Match(title='Open File'),
+    Match(title='pinentry'),
 
 ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function run {
-  if ! pgrep $(basename $1) ;
+  if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null;
   then
     $@&
   fi

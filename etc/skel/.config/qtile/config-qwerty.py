@@ -159,6 +159,28 @@ keys = [
 
     ]
 
+def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i - 1)
+
+def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i + 1)
+
+keys.extend([
+    # MOVE WINDOW TO NEXT SCREEN
+    Key([mod,"shift"], "Right", lazy.function(window_to_next_screen, switch_screen=True)),
+    Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
+])
+
 groups = []
 
 # FOR QWERTY KEYBOARDS

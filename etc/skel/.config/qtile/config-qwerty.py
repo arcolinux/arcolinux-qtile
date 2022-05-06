@@ -579,7 +579,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='Arandr'),
     Match(wm_class='feh'),
     Match(wm_class='Galculator'),
-    Match(wm_class='arcolinux-logout'),
+    Match(wm_class='archlinux-logout'),
     Match(wm_class='xfce4-terminal'),
 
 ],  fullscreen_border_width = 0, border_width = 0)

@@ -141,9 +141,9 @@ super + shift + s
 ctrl + alt + w
      arcolinux-welcome-app
 
-#arcolinux-tweak-tool
+#archlinux-tweak-tool
 ctrl + alt + e
-    arcolinux-tweak-tool
+    archlinux-tweak-tool
 
 #conky-rotate
 ctrl + alt + Next

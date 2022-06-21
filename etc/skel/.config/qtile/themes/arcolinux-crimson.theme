@@ -1,5 +1,5 @@
 # COLORS FOR THE BAR
-#Theme name : ArcoLinux Zion
+#Theme name : ArcoLinux Crimson
 def init_colors():
     return [["#4a4a46", "#4a4a46"], # color 0
             ["#4a4a46", "#4a4a46"], # color 1

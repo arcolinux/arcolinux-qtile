@@ -67,11 +67,11 @@ super + w
     vivaldi-stable
 
 #Conky-toggle
-super + ctrl + c
+super + c
     conky-toggle
 
 #killall conky
-super + c
+super + ctrl + c
     killall conky
 
 #Htop

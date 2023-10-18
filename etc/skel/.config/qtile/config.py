@@ -536,6 +536,14 @@ dgroups_app_rules = []
 
 main = None
 
+# set focus on archlinux logout widget to allow keybindings to register
+# example code taken from https://github.com/qtile/qtile/discussions/4049#discussioncomment-4373341
+
+@hook.subscribe.client_managed
+def set_focus_archlinux_logout(window):
+    if window.name == "ArchLinux Logout":
+        window.focus()
+
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')

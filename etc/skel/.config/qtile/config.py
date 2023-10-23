@@ -30,7 +30,7 @@ import re
 import socket
 import subprocess
 from typing import List  # noqa: F401
-from libqtile import layout, bar, widget, hook
+from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
 from libqtile.command import lazy
 from libqtile.widget import Spacer
@@ -532,17 +532,18 @@ dgroups_app_rules = []
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 
-
-
 main = None
 
-# set focus on archlinux logout widget to allow keybindings to register
-# example code taken from https://github.com/qtile/qtile/discussions/4049#discussioncomment-4373341
-
-@hook.subscribe.client_managed
-def set_focus_archlinux_logout(window):
+@hook.subscribe.client_new
+def new_client(window):
     if window.name == "ArchLinux Logout":
-        window.focus()
+        qtile.hide_show_bar()
+
+
+@hook.subscribe.client_killed
+def logout_killed(window):
+    if window.name == "ArchLinux Logout":
+        qtile.hide_show_bar()
 
 @hook.subscribe.startup_once
 def start_once():

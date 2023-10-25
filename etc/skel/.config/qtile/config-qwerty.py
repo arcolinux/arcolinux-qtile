@@ -30,7 +30,7 @@ import re
 import socket
 import subprocess
 from typing import List  # noqa: F401
-from libqtile import layout, bar, widget, hook
+from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
 from libqtile.command import lazy
 from libqtile.widget import Spacer
@@ -532,9 +532,19 @@ dgroups_app_rules = []
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 
-
-
 main = None
+
+# hides the top bar when the archlinux-logout widget is opened
+@hook.subscribe.client_new
+def new_client(window):
+    if window.name == "ArchLinux Logout":
+        qtile.hide_show_bar()
+
+# shows the top bar when the archlinux-logout widget is closed
+@hook.subscribe.client_killed
+def logout_killed(window):
+    if window.name == "ArchLinux Logout":
+        qtile.hide_show_bar()
 
 @hook.subscribe.startup_once
 def start_once():
@@ -560,7 +570,7 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules, 
+    *layout.Floating.default_float_rules,
     Match(wm_class='confirmreset'),  # gitk
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
@@ -580,7 +590,8 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='Arandr'),
     Match(wm_class='feh'),
     Match(wm_class='Galculator'),
-    Match(wm_class='archlinux-logout'),
+    Match(wm_class='archlinux-logout.py'),
+    Match(wm_class='Archlinux-logout.py'),
     Match(wm_class='xfce4-terminal'),
 
 ],  fullscreen_border_width = 0, border_width = 0)

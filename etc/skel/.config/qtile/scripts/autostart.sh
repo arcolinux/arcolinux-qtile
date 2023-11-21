@@ -45,7 +45,7 @@ run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 #starting utility applications at boot time
 run variety &
 run nm-applet &
-run pamac-tray &
+#run pamac-tray &
 run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
@@ -66,3 +66,4 @@ run volumeicon &
 #run spotify &
 #run atom &
 #run telegram-desktop &
+#run /usr/bin/octopi-notifier &

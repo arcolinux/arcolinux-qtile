@@ -38,9 +38,9 @@ super + F7
 super + F8
     thunar
 
-#Evolution
+#Audio player
 super + F9
-    evolution
+    lollypop
 
 #Spotify
 super + F10
@@ -94,9 +94,9 @@ super + t
 super + v
     pavucontrol
 
-#Pragha
+#Audio player
 super + m
-    pragha
+    lollypop
 
 #alacritty
 super + Return

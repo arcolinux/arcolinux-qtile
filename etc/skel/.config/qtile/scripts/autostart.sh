@@ -18,14 +18,8 @@ function run {
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 #autorandr horizontal
 
-#change your keyboard if you need it
-#setxkbmap -layout be
-
-keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
-
-if [ $keybLayout = "be" ]; then
-  cp $HOME/.config/qtile/config-azerty.py $HOME/.config/qtile/config.py
-fi
+##changed via give-me-azerty-qtile
+#setxkbmap be
 
 #autostart ArcoLinux Welcome App
 run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &

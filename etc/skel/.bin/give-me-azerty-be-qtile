@@ -43,7 +43,7 @@ echo
 
 FIND="#setxkbmap be"
 REPLACE="setxkbmap be"
-sudo sed -i "s/$FIND/$REPLACE/g" /home/$user/.config/qtile/scripts/autostart.sh
+sed -i "s/$FIND/$REPLACE/g" /home/$user/.config/qtile/scripts/autostart.sh
 
 echo
 echo "###############################################################################"

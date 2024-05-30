@@ -32,7 +32,7 @@ import subprocess
 from typing import List  # noqa: F401
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile.widget import Spacer
 #import arcobattery
 

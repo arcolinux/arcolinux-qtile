@@ -60,3 +60,4 @@ run volumeicon &
 #run spotify &
 #run telegram-desktop &
 #run /usr/bin/octopi-notifier &
+#run code

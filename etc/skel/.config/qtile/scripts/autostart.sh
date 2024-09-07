@@ -58,6 +58,5 @@ run volumeicon &
 #run dropbox &
 #run insync start &
 #run spotify &
-#run atom &
 #run telegram-desktop &
 #run /usr/bin/octopi-notifier &

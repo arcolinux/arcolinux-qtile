@@ -35,7 +35,6 @@ feh --bg-fill /usr/share/backgrounds/arco/arco-wallpaper.jpg &
 #start sxhkd to replace Qtile native key-bindings
 run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 
-
 #starting utility applications at boot time
 run variety &
 run nm-applet &
@@ -60,4 +59,4 @@ run volumeicon &
 #run spotify &
 #run telegram-desktop &
 #run /usr/bin/octopi-notifier &
-#run code
+#run code &
